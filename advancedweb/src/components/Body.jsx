@@ -1,12 +1,15 @@
 import React from 'react'
-import bodycss from '../css/body.css'
+import styles from '../css/Body.css'
 
 const Body = () => {
   return (
-    <div className='main'>
+    <div className='body-main'>
         <div >
           123
         </div>
+        <style>
+
+        </style>
     </div>
   )
 }
