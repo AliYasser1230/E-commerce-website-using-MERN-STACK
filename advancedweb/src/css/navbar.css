@@ -1,18 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap');
+
 .main{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    height: 75px;
+    height: 90px;
     background-color: #EDE3DA;
     color: #3C3A36;
-    
 }
 .list{
     display:flex;
     flex-direction: row;
-    gap: 7rem;
+    gap: 3.5rem;
     list-style: none;
-    padding: 1rem;
+    padding: 0.8rem;
 }
 .name,.list-container{
     display:flex;
@@ -24,11 +25,24 @@
 }
 .name{
     font-size: 30px;
-    margin-left: 30px;
+    margin-left: 1.2rem;
+}
+.nav-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.font{
+    font-family: 'Shantell Sans', cursive;
+    font-weight: 600;
+}
+.img{
+    margin-left: 0.3rem;
 }
 .list-container{
     font-size: 17px;
-    margin-right: 40px;
     
 }
 .list-item{
@@ -36,19 +50,45 @@
     cursor: pointer;
     font-weight: 600;
 }
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 690px) {
+    .main{
+        height: 50px;
+    }
     .list {
       gap: 2rem;
       font-size: 12px;
     }
     .list-container{
-        margin-right: 0;
         font-weight: 600;
+        display: none;
     }
     .name{
         font-size: 25px;
-        
     }
-  }
+    .nav-head{
+        display:flex;
+        align-items: center;
+        margin-top: 5px;
+    }
+    .cart{
+        margin-top: 6px;
+    }
+    .listsvg-container{
+        display: block;
+    }
+    .listsvg{
+        font-size: 22px;
+        margin-left: 1rem;
+    }
+}
+
+.cart{
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
 
   

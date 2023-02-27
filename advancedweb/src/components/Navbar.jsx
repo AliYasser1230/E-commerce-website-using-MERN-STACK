@@ -1,11 +1,28 @@
 import React from 'react'
-import navbarcss from '../css/Navbar.css'
+import navcss from '../css/Navbar.css'
 
+import {GiEgyptianBird} from 'react-icons/gi'
+import {HiShoppingCart} from 'react-icons/hi'
+import {MdOutlineFormatListBulleted} from 'react-icons/md'
 const Navbar = () => {
   return (
     <div className='main'>
-        <div className='name'>
-            Advancedweb
+      <div className='nav-head'>
+        <div >
+          <div >
+            
+
+          </div>
+        </div>
+        <div className='name font'>
+
+            Blackbirds
+            <GiEgyptianBird className='img'/>
+        </div>
+        
+        <div>
+          <HiShoppingCart className='cart'/>
+        </div>
         </div>
         <div className='list-container'>
             <ul className='list'>
