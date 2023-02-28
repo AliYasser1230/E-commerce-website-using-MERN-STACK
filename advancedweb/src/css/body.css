@@ -1,0 +1,14 @@
+ button{
+    color: black;
+    border-radius: 3px;
+    width: 30%;
+    font-family: system-ui;
+    border: none;
+    outline: none;
+    background-color: #EDE3DA;
+      position:absolute; left:80px; top:300px;
+     height: 50px; 
+     text-transform: uppercase;
+     cursor: pointer;
+    
+}

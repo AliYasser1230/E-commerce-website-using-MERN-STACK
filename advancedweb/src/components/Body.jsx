@@ -1,13 +1,23 @@
 import React from 'react'
-import bodycss from '../css/Body.css'
+import bodycss from '../css/body.css'
+import styled from 'styled-components';
+
+
 const Body = () => {
   return (
     <div className='body-main'>
-        <div >
-          123
-        </div>
+     
       
-    </div>
+    
+    <img src="/images/model.png" alt=""/>
+    <button>Login</button>
+     
+      
+     
+     
+
+      </div>
+    
   )
 }
 
