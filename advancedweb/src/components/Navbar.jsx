@@ -1,6 +1,5 @@
 import React from 'react'
 import navcss from '../css/Navbar.css'
-
 import {GiEgyptianBird} from 'react-icons/gi'
 import {HiShoppingCart} from 'react-icons/hi'
 import {MdOutlineFormatListBulleted} from 'react-icons/md'

@@ -1,19 +1,28 @@
 import './App.css'
-
+import {Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Homepage from './pages/Homepage';
+import Login from './pages/Login';
 import Navbar from './components/Navbar'
 import Body from './components/Body'
 import ImageSlider from './components/ImageSlider'
-import { SliderData } from './components/Sliderdata';
+
 function App() {
  
   return (
     
+    <Router>
     <div className="App">
       
       <Navbar/>
-      <Body/>
-      <ImageSlider slides={SliderData}/>
+      
+      
+      <Routes>
+        <Route exact path='/' element={<Homepage/>} />
+        <Route path="/login" element={<Login/>} />
+      </Routes> 
     </div>
+    </Router>
+
   )
 }
 

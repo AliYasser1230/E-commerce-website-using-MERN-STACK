@@ -6,9 +6,14 @@
     border: none;
     outline: none;
     background-color: #EDE3DA;
-      position:absolute; left:80px; top:300px;
-     height: 50px; 
-     text-transform: uppercase;
-     cursor: pointer;
+    position:absolute;
+    left:80px;
+    top:300px;
+    height: 50px; 
+    text-transform: uppercase;
+    cursor: pointer;
     
+}
+.body-image{
+  width: 100%;
 }
