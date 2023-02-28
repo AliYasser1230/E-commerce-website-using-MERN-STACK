@@ -1,23 +1,17 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
 import bodycss from '../css/body.css'
-import styled from 'styled-components';
 
 
 const Body = () => {
-  return (
+  return (    
     <div className='body-main'>
-     
-      
-    
-    <img src="/images/model.png" alt=""/>
-    <button>Login</button>
-     
-      
-     
-     
-
-      </div>
-    
+      <img src="/images/model.png" alt="" className='body-image'/>
+      <Link to={`/login`}>
+        <button >Login</button>
+      </Link>
+    </div>
   )
 }
 
