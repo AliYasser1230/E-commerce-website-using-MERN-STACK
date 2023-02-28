@@ -13,7 +13,7 @@ const Body = () => {
 
       
     
-      <img src="/images/model.png" alt="" className='body-image'/>
+     
       <Link to={`/login`}>
         <button >Login</button>
       </Link>
