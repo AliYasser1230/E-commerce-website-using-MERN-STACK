@@ -1,5 +1,6 @@
 import React from 'react'
-import navcss from '../css/Navbar.css'
+import {Link } from 'react-router-dom'
+import nav from '../css/navbar.css'
 import {GiEgyptianBird} from 'react-icons/gi'
 import {HiShoppingCart} from 'react-icons/hi'
 import {MdOutlineFormatListBulleted} from 'react-icons/md'
@@ -13,12 +14,12 @@ const Navbar = () => {
 
           </div>
         </div>
+        <Link to={'/'} className="link">
         <div className='name font'>
-
             Blackbirds
             <GiEgyptianBird className='img'/>
         </div>
-        
+        </Link>
         <div>
           <HiShoppingCart className='cart'/>
         </div>

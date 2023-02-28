@@ -43,7 +43,7 @@
 }
 .list-container{
     font-size: 17px;
-    
+    margin-top: 3px;
 }
 .list-item{
     padding: 0.4rem; 
@@ -89,6 +89,8 @@
     cursor: pointer;
 }
 
-
-
+.link{
+    text-decoration: none;
+    color: inherit;
+}
   
