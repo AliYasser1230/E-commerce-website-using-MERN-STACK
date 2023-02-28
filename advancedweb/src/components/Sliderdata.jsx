@@ -1,7 +1,7 @@
 export const SliderData = [
     {
       image:
-        'https://images.unsplash.com/photo-1546768292-fb12f6c92568?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+        'https://media.istockphoto.com/id/1329208187/photo/colorful-chocolate-covered-sweet-donuts-with-sweet-sprinkles-dessert-closeup-top-view.jpg?s=612x612&w=0&k=20&c=cMCB7epuUFGC_tA7hhTJYvYcr7577XoDX48A4WwYxvc='
     },
     {
       image:
