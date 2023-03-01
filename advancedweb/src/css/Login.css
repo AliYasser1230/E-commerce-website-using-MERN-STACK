@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.Info{
+border: none;
+outline: none;
+
+}
+.Form-Box{
+   width: 90%;
+   max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+

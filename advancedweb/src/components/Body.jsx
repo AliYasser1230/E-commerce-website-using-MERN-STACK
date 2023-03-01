@@ -9,14 +9,17 @@ const Body = () => {
   return (    
     <div className='body-main'>
      
-    <button>Login</button> 
+    
 
       
     
      
       <Link to={`/login`}>
-        <button >Login</button>
+        
+        <button id='butnlog'>Login</button>
+        
       </Link>
+      
     </div>
   )
 }
