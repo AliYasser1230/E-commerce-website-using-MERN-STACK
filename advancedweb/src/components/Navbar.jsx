@@ -4,6 +4,7 @@ import nav from '../css/navbar.css'
 import {GiEgyptianBird} from 'react-icons/gi'
 import {HiShoppingCart} from 'react-icons/hi'
 import {MdOutlineFormatListBulleted} from 'react-icons/md'
+
 const Navbar = () => {
   const [log, setLog] = useState(true);
   const handleClick = ()=>{
@@ -27,7 +28,7 @@ const Navbar = () => {
               log && 
               <div onClick={handleClick} className='login-container-2'>
                 <Link to={`/login`}>
-                  <button >Login</button>
+                  <button className='home-login'>LOGIN</button>
                 </Link>
               </div>
             }
@@ -35,7 +36,7 @@ const Navbar = () => {
               !log && 
               <div onClick={handleClick} className='login-container-2'>
                 <Link to={`/`}>
-                  <button >Home</button>
+                  <button className='home-login'>HOME</button>
                 </Link>
               </div>
             }
@@ -55,7 +56,7 @@ const Navbar = () => {
               log && 
               <div onClick={handleClick} className='login-container'>
                 <Link to={`/login`}>
-                  <button >Login</button>
+                  <button className='home-login'>LOGIN</button>
                 </Link>
               </div>
             }
@@ -63,7 +64,7 @@ const Navbar = () => {
               !log && 
               <div onClick={handleClick} className='login-container'>
                 <Link to={`/`}>
-                  <button >Home</button>
+                  <button className='home-login' >HOME</button>
                 </Link>
               </div>
             }
