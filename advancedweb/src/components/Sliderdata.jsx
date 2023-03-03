@@ -1,22 +1,24 @@
 export const SliderData = [
     {
       image:
-        'https://media.istockphoto.com/id/1329208187/photo/colorful-chocolate-covered-sweet-donuts-with-sweet-sprinkles-dessert-closeup-top-view.jpg?s=612x612&w=0&k=20&c=cMCB7epuUFGC_tA7hhTJYvYcr7577XoDX48A4WwYxvc='
+        'https://media.istockphoto.com/id/1349424393/photo/donut-for-breakfast-on-wood-board.jpg?s=612x612&w=0&k=20&c=mwJ7CcWIU1ZB2bfDSd7qSHj071eEY9-_nEyz6_Su6uA='
     },
     {
       image:
-        'https://images.unsplash.com/photo-1501446529957-6226bd447c46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1489&q=80'
+        'https://media.istockphoto.com/id/956859072/photo/baker-pastry-chef.jpg?s=612x612&w=0&k=20&c=ruJg4D2lh9tUhuYFfYgSyWF7GWZAIHMktPSwAbvbl9s='
     },
     {
       image:
-        'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80'
+        'https://media.istockphoto.com/id/535991757/photo/waffles.jpg?s=612x612&w=0&k=20&c=WjJFUCwlcyyib4Y2sYJJYrGcWi_-2IVcN6GLRpcmh0A='
     },
     {
       image:
-        'https://images.unsplash.com/photo-1475189778702-5ec9941484ae?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80'
+        'https://media.istockphoto.com/id/888069514/photo/belgian-waffles-with-berries-and-fruits.jpg?s=612x612&w=0&k=20&c=oXPYhwGZPY-XEqwGVjmdJZR6lW8V-0sOOGc43vyt6oA='
     },
     {
-      image:
-        'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80'
+     image:'https://media.istockphoto.com/id/623109122/photo/various-baked-donuts.jpg?s=612x612&w=0&k=20&c=9aXn3kpFTzR_Kllm_LcBANKhRGTx37_7Pd7pgQC9Sfk='
+    },
+    {
+      image:'https://media.istockphoto.com/id/529351735/photo/turkish-ramadan-sweet-sekerpare-with-wooden-background.jpg?s=612x612&w=0&k=20&c=FbTUX5fChTl7M7aKQI4WTwJ5e-VUqPghIuWIIu3SE3I='
     }
   ];

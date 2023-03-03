@@ -1,19 +1,56 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-
-.Info{
-border: none;
-outline: none;
+.Body-Form{
+    background-color:rgb(7, 7, 17);
+    display: flex;
+    justify-content: center;
+    height: 567px;
+    
 
 }
-.Form-Box{
-   width: 90%;
-   max-width: 450px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.imgg{
+margin-right: 50px;
 }
+h2{
+    color: white;
+    font: bold;
+ text-align: center;
+ 
+}
+.inputss{
+    outline: none;
+    border: none;
+    margin: 4px;
+    border-radius: 4px;
+    padding: 4px;
+}
+input:focus{
 
+transform: scale(1.1);
+    
+}
+button:hover{
+    background-color: rgb(55, 55, 145);
+    letter-spacing: 0.5px;
+}
+ .infoo{
+    color: white;
+    
+ }
+.Main-Form{
+    margin-top: 200px;
+    width: 400px;
+  background: rgb(19, 18, 18);
+ padding: 8px;
+ height: fit-content;
+
+
+}
+.button-signin{
+    border-radius: 4px;
+    color:white ;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 30px;
+    background-color:rgb(18, 18, 83) ;
+    }
+    

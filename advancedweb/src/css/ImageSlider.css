@@ -7,15 +7,16 @@
 }
 
 .image {
+  background-position: center;
   width: 1000px;
-  height: 600px;
+  height: 400px;
   border-radius: 10px;
 }
 
 .right-arrow {
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 120px;
   font-size: 3rem;
   color: #000000;
   z-index: 10;
@@ -26,7 +27,7 @@
 .left-arrow {
   position: absolute;
   top: 50%;
-  left: 32px;
+  left: 120px;
   font-size: 3rem;
   color: #000000;
   z-index: 10;
