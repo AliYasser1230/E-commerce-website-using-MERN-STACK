@@ -19,7 +19,7 @@ const Sign = () => {
       form && 
       <Signup/>
     }
-    <p><button onClick={handleClick}>Sign {form? "in":"up"}</button></p>
+    <p className='choosing-type'>{form ? "Already have an account?" : "Don't have an account?"}<button onClick={handleClick}>Sign {form? "in":"up"}</button></p>
 
     </div>
 
