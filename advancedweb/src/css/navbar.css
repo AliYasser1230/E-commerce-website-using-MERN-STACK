@@ -94,3 +94,20 @@
     color: inherit;
 }
   
+.login-container{
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    right: 3px;
+}
+.login-container-2{
+    position: absolute;
+    right: 50px;
+    top: 15px;
+}
+@media only screen and (min-width: 690px)
+{
+    .login-container-2{
+        display: none;
+    }
+}

@@ -7,7 +7,6 @@ const Homepage = () => {
   return (
     <div>
         <ImageSlider slides={SliderData}/>
-        <Body/>
     </div>
   )
 }
