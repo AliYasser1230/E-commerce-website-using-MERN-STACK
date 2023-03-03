@@ -8,8 +8,6 @@ const Homepage = () => {
     <div>
         <ImageSlider slides={SliderData}/>
         <Body/>
-        
-        
     </div>
   )
 }

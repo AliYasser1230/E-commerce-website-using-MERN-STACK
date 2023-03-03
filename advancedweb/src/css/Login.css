@@ -9,7 +9,7 @@
 h2{
     color: white;
     font: bold;
- text-align: center;
+    text-align: center;
  
 }
 .inputss{
@@ -19,6 +19,7 @@ h2{
     margin: 4px;
     border-radius: 10px;
     padding: 4px;
+    width: 75%;
 }
 input:focus{
 
@@ -40,12 +41,20 @@ button:hover{
     align-items: center;
     position: absolute;
     top: 300px;
-    background: rgb(19, 18, 18);
-    
+    background: rgba(255, 255, 255, 0.126);
     height: fit-content;
-    width: 20%;
-    height: 30%;
-
+    width: 30%;
+    min-height: 30%;
+}
+.form-item-container{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 
 }
 .button-signin{
@@ -67,4 +76,28 @@ button:hover{
     top: -610px;
     left: 680px;
     color: white;
+}
+@media (max-width: 690px)
+{
+    .Main-Form{
+        top: 100px;
+    }
+}
+.change-form{
+    margin-top: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0.1rem
+}
+.change-form-button{
+    margin: 0;
+}
+.change-form-container{
+    margin-top: 12px;
 }
