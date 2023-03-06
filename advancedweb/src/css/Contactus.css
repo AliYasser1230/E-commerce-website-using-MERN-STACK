@@ -7,7 +7,7 @@ border: none;
 border-radius: 4px;
 padding: 5px;
 display: flex;
-
+text-align: center;
 }
 
 .message{
@@ -18,22 +18,33 @@ display: flex;
   border: none;
   margin-top: 3px;
   border-radius: 4px;
+
+}
+
+
+h1{
+    text-align: center;
 }
 .Main-ContactUs{
+    
 margin-left: 500px ;
 position: absolute;
 bottom: 100px;
-left: 100px;
-background: rgba(255, 255, 255, 0.126);
+left: 50px;
+background: rgba(255, 255, 255, 0.24);
 
 }
+
 .img-contact{
-    width: 100%;
+   width: 100%;
+   
 }
 .button-submit{
     cursor: pointer;
     outline: none;
     border: none;
  border-radius:4px ;
- 
+margin-left: 80px;
+background-color:darkblue;
+color: white;
 }

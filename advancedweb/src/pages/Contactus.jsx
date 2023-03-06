@@ -4,7 +4,7 @@ const Contactus = () => {
     return (
         
         <div>
-            <img className='img-contact' src="https://media.istockphoto.com/id/534053642/photo/donuts-in-multicolored-glaze-close-up.jpg?b=1&s=170667a&w=0&k=20&c=DSTP_0y7Odi_1J2uvhDRfwJgRvlz5m-uAWd0VYsfdNQ=" alt="" />
+            <img className='img-contact' src="/images/w.jpg" alt="" />
            
             <div className='Main-ContactUs'>
             
