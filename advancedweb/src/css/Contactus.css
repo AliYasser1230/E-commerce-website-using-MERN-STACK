@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+}
+.inputs-contactus{
+outline: none;
+border: none;
+border-radius: 4px;
+padding: 5px;
+display: flex;
+
+}
+
+.message{
+    width: 30%;
+   padding: 60px;
+   display: flex;
+   outline: none;
+  border: none;
+  margin-top: 3px;
+  border-radius: 4px;
+}
+.Main-ContactUs{
+margin-left: 500px ;
+position: absolute;
+bottom: 100px;
+left: 100px;
+background: rgba(255, 255, 255, 0.126);
+
+}
+.img-contact{
+    width: 100%;
+}
+.button-submit{
+    cursor: pointer;
+    outline: none;
+    border: none;
+ border-radius:4px ;
+ 
+}

@@ -5,6 +5,7 @@ import Sign from './pages/Sign';
 import Navbar from './components/Navbar'
 import Body from './components/Body'
 import ImageSlider from './components/ImageSlider'
+import Contactus from './pages/Contactus';
 
 function App() {
  
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Homepage/>} />
         <Route path="/login" element={<Sign/>} />
+        <Route path="/Contactus" element={<Contactus/>}/>
       </Routes> 
     </div>
     </Router>

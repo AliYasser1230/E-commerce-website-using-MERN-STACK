@@ -50,7 +50,9 @@ const Navbar = () => {
                 <li className='home list-item'>Home</li>
                 <li className='list-item'>About</li>
                 <li className='list-item'>Shop</li>
-                <li className='list-item'>Contact Us</li>
+            <Link to={`/Contactus`}>
+                <li className='list-item' onClick={handleClick}>Contact Us</li>
+            </Link>
             </ul>
             {
               log && 
