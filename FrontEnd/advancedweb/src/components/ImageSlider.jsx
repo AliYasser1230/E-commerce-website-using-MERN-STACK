@@ -9,7 +9,7 @@ const ImageSlider = ({ slides }) => {
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
-    console.log("alla");
+   
   };
 
   const prevSlide = () => {
