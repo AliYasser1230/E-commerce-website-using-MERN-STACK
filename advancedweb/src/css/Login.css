@@ -70,19 +70,17 @@ button:hover{
 .signup{
     color: white;
 }
-.choosing-type{
-    position: relative;
-    display: block;
-    top: -610px;
-    left: 680px;
-    color: white;
-}
-@media (max-width: 690px)
+
+
+@media only screen and (max-width: 1000px)
 {
-    .Main-Form{
-        top: 100px;
-    }
+    .imgg{
+        height: 92vh;
+        width: 100%;
+        
+     }
 }
+
 .change-form{
     margin-top: 5px;
     font-size: 10px;

@@ -24,22 +24,15 @@ const Navbar = () => {
             <GiEgyptianBird className='img'/>
         </div>
         <div>
-             {
-              log && 
-              <div onClick={handleClick} className='login-container-2'>
-                <Link to={`/login`}>
-                  <button className='home-login'>LOGIN</button>
-                </Link>
-              </div>
-            }
-            {
-              !log && 
-              <div onClick={handleClick} className='login-container-2'>
-                <Link to={`/`}>
-                  <button className='home-login'>HOME</button>
-                </Link>
-              </div>
-            }
+        
+           {
+            log && 
+            <div onClick={()=>{setLog(false)}} className='login-container-2'>
+              <Link to={`/login`}>
+                <button className='home-login'>LOGIN</button>
+              </Link>
+            </div>
+           }
           
         
           <HiShoppingCart className='cart'/>
@@ -47,29 +40,24 @@ const Navbar = () => {
         </div>
         <div className='list-container'>
             <ul className='list'>
-                <li className='home list-item'>Home</li>
+              <Link to={`/`} className="link">
+                <li className='home list-item' onClick={()=>{setLog(true)}}>Home</li>
+              </Link>
                 <li className='list-item'>About</li>
                 <li className='list-item'>Shop</li>
-            <Link to={`/Contactus`}>
-                <li className='list-item' onClick={handleClick}>Contact Us</li>
+            <Link to={`/Contactus`} className="link">
+                <li className='list-item' onClick={()=>{setLog(true)}}>Contact Us</li>
             </Link>
             </ul>
             {
               log && 
-              <div onClick={handleClick} className='login-container'>
+              <div onClick={()=>{setLog(false)}} className='login-container'>
                 <Link to={`/login`}>
                   <button className='home-login'>LOGIN</button>
                 </Link>
               </div>
             }
-            {
-              !log && 
-              <div onClick={handleClick} className='login-container'>
-                <Link to={`/`}>
-                  <button className='home-login' >HOME</button>
-                </Link>
-              </div>
-            }
+          
             
         </div>
     </div>

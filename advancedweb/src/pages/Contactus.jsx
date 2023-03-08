@@ -8,15 +8,17 @@ const Contactus = () => {
            
             <div className='Main-ContactUs'>
             
-                <form>
+                <form >
+                    <div className='form-container'>
                  <h1>CONTACT US</h1><br />
-                 <div>
-                   Enter Your Name<input type="text" placeholder='Enter Your Name' className='inputs-contactus' /><br />
-                   Email Address<input type="text" placeholder='Email Address' className='inputs-contactus' /><br />
-                   Message<input type="text" className='message' /><br />
+                 <div className='form-items'>
+                   <input type="text" placeholder='Enter Your Name' className='inputs-contactus' /><br />
+                   <input type="text" placeholder='Email Address' className='inputs-contactus' /><br />
+                   <input type="text" className='message' placeholder='Enter your message here'/><br />
+                   <button className='button-submit'>SUBMIT</button>
                  </div>
+                </div>
                 </form>
-                <button className='button-submit'>SUBMIT</button>
                 
 
 

@@ -1,6 +1,4 @@
-*{
-    margin: 0;
-}
+
 .inputs-contactus{
 outline: none;
 border: none;
@@ -11,13 +9,11 @@ text-align: center;
 }
 
 .message{
-    width: 30%;
-   padding: 60px;
-   display: flex;
-   outline: none;
+    width: 57%;
+   padding: 50px;
   border: none;
   margin-top: 3px;
-  border-radius: 4px;
+  border-radius: 20px;
 
 }
 
@@ -25,16 +21,24 @@ text-align: center;
 h1{
     text-align: center;
 }
-.Main-ContactUs{
-    
-margin-left: 500px ;
-position: absolute;
-bottom: 100px;
-left: 50px;
-background: rgba(255, 255, 255, 0.24);
 
+.form-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.126);
 }
 
+.form-items{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .img-contact{
    width: 100%;
    
@@ -42,9 +46,15 @@ background: rgba(255, 255, 255, 0.24);
 .button-submit{
     cursor: pointer;
     outline: none;
-    border: none;
- border-radius:4px ;
-margin-left: 80px;
-background-color:darkblue;
-color: white;
+    border-radius:10px ;
+    background-color:darkblue;
+    color: white;
+}
+@media only screen and (max-width: 1000px)
+{
+    .img-contact{
+        height: 92vh;
+        width: 100%;
+        
+     }
 }
