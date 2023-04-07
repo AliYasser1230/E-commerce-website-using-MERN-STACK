@@ -1,21 +1,37 @@
-const express=require('express');
-const path=require('path');
-const bodyparser=require('body-parser');
-const mongodb= require('mongodb');
+let express = require('express');
+let cors = require('cors');
+let dotenv = require('dotenv');
+dotenv.config();
+let mongoose = require('mongoose');
+let router = require('./routing/router');
+const userModel = require("./models/model");
 
-const dbconn=mongodb.MongoClient.connect('mongodb://localhost:27017');
 
-const app=express();
+//initialising express as app
+const app = express();
+app.use(express.json());
+app.use(cors());
+app.use(router);
 
+//setting up mongo
+mongoose.connect(`mongodb+srv://admin:123@firstcluster.or82qdv.mongodb.net/db?retryWrites=true&w=majority`, 
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
 
-app.use(express.static(path.resolve(__dirname,'public')));
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.post('/post-feedback', function (req, res) {
-  dbconn.then(function(db) {
-      delete req.body._id; // for safety reasons
-      db.collection('feedbacks').insertOne(req.body);
-  });    
-  res.send('Data received:\n' + JSON.stringify(req.body));
+//testing to see whether mongo's connection has been established or nots
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected successfully");
 });
-app.listen(process.env.PORT ||3000,process.env.IP || '0.0.0.0' );
+
+
+//finally listen to the port
+let PORT = process.env.port || 5051;
+
+app.listen(PORT, ()=>{
+    console.log("Listening on port: " + PORT)
+})

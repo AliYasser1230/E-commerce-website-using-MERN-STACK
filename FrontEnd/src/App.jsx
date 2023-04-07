@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Body from './components/Body'
 import ImageSlider from './components/ImageSlider'
 import Contactus from './pages/Contactus';
+import Shop from './pages/Shop';
 
 function App() {
  
@@ -20,6 +21,7 @@ function App() {
         <Route exact path='/' element={<Homepage/>} />
         <Route path="/login" element={<Sign/>} />
         <Route path="/Contactus" element={<Contactus/>}/>
+        <Route path="/shop" element={<Shop/>}/>
       </Routes> 
     </div>
     </Router>

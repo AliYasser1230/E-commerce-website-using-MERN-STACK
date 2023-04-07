@@ -44,7 +44,9 @@ const Navbar = () => {
                 <li className='home list-item' onClick={()=>{setLog(true)}}>Home</li>
               </Link>
                 <li className='list-item'>About</li>
+                <Link to={'/shop'} className='link'>
                 <li className='list-item'>Shop</li>
+                </Link>
             <Link to={`/Contactus`} className="link">
                 <li className='list-item' onClick={()=>{setLog(true)}}>Contact Us</li>
             </Link>
