@@ -13,15 +13,6 @@ app.post("/add_user", async (request, response) => {
       response.status(500).send(error);
     }
 });
-app.post("/add_item", async(req,res)=>{
-  const image = new imageModel(req.body);
-  try{
-    await image.save();
-    res.send(image);
-  }catch(e){
-    res.status(500).send(e);
-  }
-})
 
 app.get("/users", async (request, response) => {
     const users = await userModel.find({});
@@ -32,6 +23,17 @@ app.get("/users", async (request, response) => {
       response.status(500).send(error);
     }
   });
+
+app.post("/add_item", async(req,res)=>{
+  const image = new imageModel(req.body);
+  try{
+    await image.save();
+    res.send(image);
+  }catch(e){
+    res.status(500).send(e);
+  }
+});
+
 app.get("/shop", async (req,res)=>{
   const imageData = await imageModel.find({});
   try{
@@ -39,6 +41,6 @@ app.get("/shop", async (req,res)=>{
   }catch(e){
     res.status(500).send(e);
   }
-})
+});
 
 module.exports = app;

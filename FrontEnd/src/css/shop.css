@@ -1,0 +1,33 @@
+.one-item{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.three-items{   
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+}
+.price{
+    color: rgba(0, 0, 0, 0.666);
+    font-size: 18px;
+    font-weight: 600;
+}
+.add-button{
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 30px;
+    background-color: rgba(241, 218, 222, 0.77);
+    cursor: pointer;
+}
+.add-button:hover{
+    background-color: rgb(226, 202, 202);
+}
+.donut-name{
+    font-size: 20px;
+    color: rgba(229, 131, 147, 0.627);
+    font-weight: 600;
+}

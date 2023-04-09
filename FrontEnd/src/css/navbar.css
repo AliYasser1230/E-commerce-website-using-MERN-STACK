@@ -26,6 +26,8 @@
 .name{
     font-size: 30px;
     margin-left: 1.2rem;
+    color:rgb(238, 185, 194);
+
 }
 .nav-head{
     display: flex;

@@ -4,7 +4,6 @@ let dotenv = require('dotenv');
 dotenv.config();
 let mongoose = require('mongoose');
 let router = require('./routing/router');
-const userModel = require("./models/model");
 
 
 //initialising express as app

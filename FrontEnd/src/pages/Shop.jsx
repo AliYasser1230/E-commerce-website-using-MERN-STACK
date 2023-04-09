@@ -1,5 +1,6 @@
 import React from 'react'
 import useFetch from '../hooks/useFetch'
+import shop from '../css/shop.css'
 
 const Shop = () => {
 
@@ -8,13 +9,15 @@ const Shop = () => {
   return (
     
     <div>
-        <div>
+        <div className='three-items'>
         {
         data.map((info)=>{
             return(
-                <div>
-                <h2 >{info.name}</h2>
-                <h2>{info.age}</h2>
+                <div className='one-item'>
+                    <h2>{info.image}</h2>
+                    <p className='donut-name'>{info.name}</p>
+                    <p className='price'>${info.price}</p>
+                    <button className='add-button'>Add</button>
                 </div>
             )
         })

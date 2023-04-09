@@ -20,7 +20,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className='name font'>
-            Blackbirds
+            Donuts and more
             <GiEgyptianBird className='img'/>
         </div>
         <div>

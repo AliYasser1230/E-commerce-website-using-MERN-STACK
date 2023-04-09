@@ -3,12 +3,16 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: false,
+    required: true,
   },
-  age: {
+  price: {
     type: Number,
     default: 0,
   },
+  image: {
+    type: String,
+    required: true,
+  }
 });
 
 
