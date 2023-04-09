@@ -7,16 +7,31 @@ import {MdOutlineFormatListBulleted} from 'react-icons/md'
 
 const Navbar = () => {
   const [log, setLog] = useState(true);
+  const [list, setList] = useState(false);
   const handleClick = ()=>{
     setLog(!log)
+  }
+  const handleList = ()=>{
+    setList(!list);
   }
   return (
     <div className='main'>
       <div className='nav-head'>
-        <div >
-          <div >
-            
-
+        <div >    
+          <div className='listsvg-container'>
+          <MdOutlineFormatListBulleted className='listsvg' onClick={handleList}/>
+          {
+            list &&
+            <div className='list-att'>
+              <ul className='list-list'>
+                <li className='close-list' onClick={handleList}>x</li>
+                <Link to='/' className="link"><li className='list-list-item'>Home</li></Link>
+                <Link to='/' className="link"><li className='list-list-item'>About</li> </Link>
+                <Link to='/shop' className="link"><li className='list-list-item'>Shop</li> </Link>
+                <Link to='/Contactus' className='link'><li className='list-list-item'>Contact us</li></Link>
+              </ul>
+            </div>
+          }
           </div>
         </div>
         <div className='name font'>
@@ -28,7 +43,7 @@ const Navbar = () => {
            {
             log && 
             <div onClick={()=>{setLog(false)}} className='login-container-2'>
-              <Link to={`/login`}>
+              <Link to={`/login`} >
                 <button className='home-login'>LOGIN</button>
               </Link>
             </div>

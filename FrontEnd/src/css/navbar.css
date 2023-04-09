@@ -52,6 +52,13 @@
     cursor: pointer;
     font-weight: 600;
 }
+
+.listsvg{
+    display:none;
+    cursor:pointer;
+}
+
+
 @media only screen and (max-width: 690px) {
     .main{
         height: 50px;
@@ -81,8 +88,11 @@
     .listsvg{
         font-size: 22px;
         margin-left: 1rem;
+        display:block;
     }
 }
+
+
 
 .cart{
     margin-right: 1rem;
@@ -127,4 +137,42 @@
     .login-container-2{
         display: none;
     }
+}
+
+.list-att{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    background-color: rgba(216, 192, 192, 0.537);
+    margin-top: -2.5rem;
+    
+    width: 15rem;
+}
+.list-list{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    gap: 1rem;
+    color: white;
+}
+.list-list-item{
+    cursor: pointer;
+    z-index: -100;
+}
+.close-list{
+    cursor: pointer;
+    margin-left: 10rem;
+    position: absolute;
+    top: 10px;
+    font-size: 25px;
+    color:black;
+    font-weight: bold;
+
 }
