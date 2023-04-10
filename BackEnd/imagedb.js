@@ -1,13 +1,12 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
-module.exports=async function connection(){
+module.exports = async function connection(){
     try{
         const connectionParams={
-            useNewUrl:true,
-            useCreateIndex:true,
-            useUnifiedTopology:true
+            useNewUrlParser: true, 
+            useUnifiedTopology: true 
         }
-        await mongoose.connect(process.env.DB,connectionParams)
+        await mongoose.connect("mongodb://localhost/image-upload",connectionParams)
         console.log('Connnected to database')
     }
     catch(error)

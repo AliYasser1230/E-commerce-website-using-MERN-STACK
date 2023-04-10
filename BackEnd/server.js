@@ -1,9 +1,9 @@
 let express = require('express');
 let cors = require('cors');
 let dotenv = require('dotenv');
-let connection=require('./imagedb');
-let Grid=require('gridfs-stream');
-let upload=require('./routing/upload');
+let connection = require('./imagedb');
+let Grid = require('gridfs-stream');
+let upload = require('./routing/upload');
 dotenv.config();
 let mongoose = require('mongoose');
 let router = require('./routing/router');
@@ -16,15 +16,23 @@ conn.once("open",function(){
   gfs.collection("photos");
 })
 
+//initialising express as app
+const app = express();
+app.use(express.json());
+app.use(cors());
+app.use(router);
+
+
+
 app.use("/file",upload);
 
 //media routes
 
 app.get('file/:filename',async(req,res)=>{
   try{
-   const file=await gfs.files.findOne({filename:req.params.filename});
- const readStream=gfs.createReadStream(file.filename);
- readStream.pipe(res)
+    const file = await gfs.files.findOne({filename:req.params.filename});
+    const readStream=gfs.createReadStream(file.filename);
+    readStream.pipe(res)
   }
   catch(error){ 
   res.send('not found');
@@ -41,11 +49,7 @@ app.delete("/file/:filename",async(req,res)=>{
 })
 
 
-//initialising express as app
-const app = express();
-app.use(express.json());
-app.use(cors());
-app.use(router);
+
 
 //setting up mongo
 mongoose.connect(`mongodb+srv://aliyasser3:Mydb123@e-commerce.qafligx.mongodb.net/?retryWrites=true&w=majority`, 
@@ -68,4 +72,5 @@ let PORT = process.env.port || 5051;
 
 app.listen(PORT, ()=>{
     console.log("Listening on port: " + PORT)
+    console.log(process.env.DB)
 })
