@@ -4,7 +4,7 @@ let dotenv = require('dotenv');
 dotenv.config();
 let mongoose = require('mongoose');
 let router = require('./routing/router');
-
+let imagerouter = require('./routing/imagerouting');
 //initialising express as app
 const app = express();
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(cors());
 app.use(router);
 
 //setting up mongo
-mongoose.connect(`mongodb+srv://aliyasser3:Mydb123@e-commerce.qafligx.mongodb.net/?retryWrites=true&w=majority`, 
+mongoose.connect(`mongodb+srv://admin:123@firstcluster.or82qdv.mongodb.net/`, 
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -24,6 +24,9 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
+  bucket = new mongoose.mongo.GridFSBucket(db, {
+    bucketName: "newBucket"
+  });
 });
 
 
