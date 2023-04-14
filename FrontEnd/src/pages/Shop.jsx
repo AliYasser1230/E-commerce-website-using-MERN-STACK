@@ -4,7 +4,7 @@ import shop from '../css/shop.css'
 
 const Shop = () => {
 
-    let data = useFetch("http://localhost:5050/users")
+    let data = useFetch("http://localhost:5050/retrieve")
     console.log(data);
   return (
     
@@ -12,9 +12,14 @@ const Shop = () => {
         <div className='three-items'>
         {
         data.map((info)=>{
+            const base64String = btoa(
+                String.fromCharCode(...new Uint8Array(info.img.data.data))
+                )
             return(
                 <div className='one-item'>
-                    <h2>{info.image}</h2>
+                    <div>
+                        <img src={`data:image/png;base64,${base64String}`} height="100" width="200"/>
+                    </div>
                     <p className='donut-name'>{info.name}</p>
                     <p className='price'>${info.price}</p>
                     <button className='add-button'>Add</button>

@@ -1,10 +1,12 @@
 let express = require('express');
 let cors = require('cors');
+const multer = require("multer");
+const fs = require("fs");
 let dotenv = require('dotenv');
 dotenv.config();
 let mongoose = require('mongoose');
 let router = require('./routing/router');
-let imagerouter = require('./routing/imagerouting');
+let imageModel = require('./models/imagemodel');
 //initialising express as app
 const app = express();
 app.use(express.json());
@@ -24,11 +26,45 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
   console.log("Connected successfully");
-  bucket = new mongoose.mongo.GridFSBucket(db, {
-    bucketName: "newBucket"
-  });
 });
 
+
+//setting up storage for images, specifically for shop, including requests
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+
+app.post("/upload", upload.single("Image"), (req, res) => {
+  const saveImage =  imageModel({
+    name: req.body.name,
+    price:req.body.price,
+    img: {
+      data: fs.readFileSync("uploads/" + req.file.filename),
+      contentType: "image/png",
+    },
+  });
+  saveImage
+    .save()
+    .then((res) => {
+      console.log("image is saved");
+    })
+    .catch((err) => {
+      console.log(err, "error has occur");
+    });
+    res.send('image is saved')
+});
+
+app.get('/retrieve',async (req,res)=>{
+  const allData = await imageModel.find()
+  res.json(allData)
+})
 
 //finally listen to the port
 let PORT = process.env.port || 5051;

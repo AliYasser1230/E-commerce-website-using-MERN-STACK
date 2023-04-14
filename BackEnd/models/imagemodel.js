@@ -1,8 +1,14 @@
 const mongoose = require("mongoose");
 
 const ImageSchema = new mongoose.Schema({
-    name: String,
-    desc: String,
+    name: {
+        type: String,
+        required: true,
+      },
+      price: {
+        type: Number,
+        default: 0,
+      },
     img:
     {
         data: Buffer,
