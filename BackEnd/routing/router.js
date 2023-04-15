@@ -1,9 +1,38 @@
 const express = require("express");
 const userModel = require("../models/model");
 const imageModel = require("../models/imagemodel");
+const User = require("../models/model");
 const app = express();
 
-app.post("/add_user", async (request, response) => {
+app.use(express.urlencoded({extended:true}))
+
+app.post("/register",async(req,res)=>{
+  const user = new userModel(req.body);
+    try {
+      await user.save();
+      res.send(user);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  /*try{
+  const check=await User.findOne({email:email})
+  if(check)
+  {
+    res.json("exist")
+  }
+  else
+  {*/
+   // res.send(data);
+    //res.json("not exist")
+   
+
+/*}
+  }catch(err){
+    res.json("not exist")
+  }
+*/})
+
+app.get("/add_user", async (request, response) => {
     const user = new userModel(request.body);
     try {
       await user.save();
@@ -15,13 +44,25 @@ app.post("/add_user", async (request, response) => {
 
 app.get("/users", async (request, response) => {
     const users = await userModel.find({});
-  
+    
     try {
       response.send(users);
-    } catch (error) {
+    } 
+    catch (error) 
+    {
       response.status(500).send(error);
     }
   });
+  
+  app.post("/users", async (req,res)=>{
+    const users=new userModel(req.body);
+    users.save()
+    .then((result)=>{
+   
+    }).catch((err)=>{
+ console.log(err);
+    })
+  })
 
 app.post("/add_item", async(req,res)=>{
   const image = new imageModel(req.body);

@@ -67,7 +67,7 @@ app.get('/retrieve',async (req,res)=>{
 })
 
 //finally listen to the port
-let PORT = process.env.port || 5051;
+let PORT =  5050;
 
 app.listen(PORT, ()=>{
     console.log("Listening on port: " + PORT)
