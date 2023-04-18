@@ -17,6 +17,7 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.2",
     "react-scripts": "^5.0.1",
+    "recoil": "^0.7.7",
     "sass": "^1.58.3",
     "styled-components": "^5.3.6",
     "tailwindcss": "^3.2.7",

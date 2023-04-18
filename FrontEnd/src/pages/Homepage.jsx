@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 const Homepage = () => {
   const loc=useLocation()
-
+  
   return (
     <div>
       <h1> HELLO  AND WELCOME!! </h1>
