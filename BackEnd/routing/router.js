@@ -14,23 +14,23 @@ app.post("/register",async(req,res)=>{
     } catch (error) {
       res.status(500).send(error);
     }
-  /*try{
-  const check=await User.findOne({email:email})
+})
+app.get("/register",async(req,res)=>{
+  try{
+  const check=await User.findOne(req.body)
   if(check)
   {
     res.json("exist")
   }
   else
-  {*/
-   // res.send(data);
-    //res.json("not exist")
-   
-
-/*}
+  {
+    res.send(check);
+    res.json("not exist")
+}
   }catch(err){
     res.json("not exist")
   }
-*/})
+})
 
 app.get("/add_user", async (request, response) => {
     const user = new userModel(request.body);

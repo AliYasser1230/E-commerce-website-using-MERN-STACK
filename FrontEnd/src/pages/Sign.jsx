@@ -9,7 +9,7 @@ const Sign = () => {
   const history=useNavigate();
   async function submit(e){
     e.preventDefault();
-  try {
+   try {
 
     await axios.post("http://localhost:5050/register",{email : email, password: password})
     .then(res=>{
@@ -48,13 +48,13 @@ const Sign = () => {
        <h2>Login</h2>
        <form action="POST" >
        <div className='form-item-container'>
-          <input className='inputss ' type="text" placeholder='User Name' />
+          <input className='inputss ' type="text" placeholder='User Name'onChange={(e)=>{setemail(e.target.value)}} />
         </div>
         <div className='form-item-container'>
-          <input className='inputss' type="text" placeholder='Password'/>
+          <input className='inputss' type="text" placeholder='Password'onChange={(e)=>{setpassword(e.target.value)}}/>
         </div>
        <div className='form-item-container'>
-        <button  className='button-signin'> Login </button>
+        <button  className='button-signin'> Login</button>
         </div>
       </form>
       <div className="change-form-container">

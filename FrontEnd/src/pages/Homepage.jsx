@@ -9,7 +9,7 @@ const Homepage = () => {
 
   return (
     <div>
-      <h1> HELLO {loc.state.id} AND WELCOME!! </h1>
+      <h1> HELLO  AND WELCOME!! </h1>
         <ImageSlider slides={SliderData}/>
     </div>
   )
