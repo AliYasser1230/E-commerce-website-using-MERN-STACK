@@ -40,7 +40,7 @@ const CartItems = () => {
                 )
                 
             })}
-            <p className='total'>You're total is ${totalUsed}!</p>
+            <p className='total'>Your total is ${totalUsed}!</p>
             <div className='btn-container'>
             <button className='shop-btn'>Proceed to payment</button>
             </div>

@@ -5,6 +5,7 @@ const fs = require("fs");
 let dotenv = require('dotenv');
 dotenv.config();
 let mongoose = require('mongoose');
+let mongodb = require('mongodb');
 let router = require('./routing/router');
 let imageModel = require('./models/imagemodel');
 //initialising express as app
@@ -65,6 +66,27 @@ app.get('/retrieve',async (req,res)=>{
   const allData = await imageModel.find()
   res.json(allData)
 })
+
+app.get('/delete/:id', async (req,res)=>{
+  let {id} = req.params;
+  try{
+    const exist = await imageModel.findById(id);
+    console.log(exist);
+    if(exist){
+      const data = await imageModel.findByIdAndRemove(id);
+      res.send(id + " Has been removed");
+    }
+    else{
+      res.send('Document doesnt exist');
+    }
+  }
+  catch(err){
+    res.send(err);
+  }
+  
+});
+
+
 
 //finally listen to the port
 let PORT =  5050;
