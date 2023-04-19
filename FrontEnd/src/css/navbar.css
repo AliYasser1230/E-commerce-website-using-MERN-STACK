@@ -142,12 +142,9 @@
 .list-att{
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
     position: absolute;
-    background-color: rgba(216, 192, 192, 0.537);
-    margin-top: -2.5rem;
-    
+    background-color: #ede3dace;
     width: 15rem;
 }
 .list-list{
@@ -160,7 +157,9 @@
     margin-bottom: 2rem;
     margin-right: 2rem;
     gap: 1rem;
-    color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: 550;
 }
 .list-list-item{
     cursor: pointer;

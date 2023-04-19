@@ -4,34 +4,33 @@ import nav from '../css/navbar.css'
 import {GiEgyptianBird} from 'react-icons/gi'
 import {HiShoppingCart} from 'react-icons/hi'
 import {MdOutlineFormatListBulleted} from 'react-icons/md'
+import CartItems from './CartItems'
 
 const Navbar = () => {
   const [log, setLog] = useState(true);
   const [list, setList] = useState(false);
+  const [cart, setCart] = useState(false);
   const handleClick = ()=>{
     setLog(!log)
   }
   const handleList = ()=>{
     setList(!list);
+    setCart(false);
+  }
+  const handleCart = ()=>{
+    setCart(!cart);
+    setList(false);
   }
   return (
     <div className='main'>
+      <div>
       <div className='nav-head'>
+      
         <div >    
           <div className='listsvg-container'>
           <MdOutlineFormatListBulleted className='listsvg' onClick={handleList}/>
-          {
-            list &&
-            <div className='list-att'>
-              <ul className='list-list'>
-                <li className='close-list' onClick={handleList}>x</li>
-                <Link to='/' className="link"><li className='list-list-item'>Home</li></Link>
-                <Link to='/' className="link"><li className='list-list-item'>About</li> </Link>
-                <Link to='/shop' className="link"><li className='list-list-item'>Shop</li> </Link>
-                <Link to='/Contactus' className='link'><li className='list-list-item'>Contact us</li></Link>
-              </ul>
-            </div>
-          }
+          
+          
           </div>
         </div>
         <div className='name font'>
@@ -50,7 +49,7 @@ const Navbar = () => {
            }
           
         
-          <HiShoppingCart className='cart'/>
+          <HiShoppingCart className='cart' onClick={handleCart}/>
         </div>
         </div>
         <div className='list-container'>
@@ -74,8 +73,28 @@ const Navbar = () => {
                 </Link>
               </div>
             }
-          
+                
             
+        </div>
+        
+        </div>
+        <div>
+        {
+          cart &&  
+          <CartItems/>
+        }
+{
+            list &&
+            <div className='list-att'>
+              <ul className='list-list'>
+                <li className='close-list' onClick={handleList}>x</li>
+                <Link to='/' className="link"><li className='list-list-item'>Home</li></Link>
+                <Link to='/' className="link"><li className='list-list-item'>About</li> </Link>
+                <Link to='/shop' className="link"><li className='list-list-item'>Shop</li> </Link>
+                <Link to='/Contactus' className='link'><li className='list-list-item'>Contact us</li></Link>
+              </ul>
+            </div>
+          }
         </div>
     </div>
   )

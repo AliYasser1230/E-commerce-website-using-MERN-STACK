@@ -9,6 +9,20 @@
     display: grid;
     grid-template-columns: repeat(3,33%);
 }
+@media only screen and (max-width: 690px){
+    .three-items{   
+        display: flex;
+        flex-direction: column;
+    }
+    .one-item{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+}
+
 .price{
     color: rgba(0, 0, 0, 0.666);
     font-size: 18px;
