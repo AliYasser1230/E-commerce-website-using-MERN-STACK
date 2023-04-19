@@ -29,12 +29,10 @@ const Navbar = () => {
         <div >    
           <div className='listsvg-container'>
           <MdOutlineFormatListBulleted className='listsvg' onClick={handleList}/>
-          
-          
           </div>
         </div>
         <div className='name font'>
-            Donuts and more
+            BlackBirds
             <GiEgyptianBird className='img'/>
         </div>
         <div>
