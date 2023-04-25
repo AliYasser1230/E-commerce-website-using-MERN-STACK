@@ -40,14 +40,14 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage: multer.memoryStorage() });
 
 app.post("/upload", upload.single("Image"), (req, res) => {
-  const saveImage =  imageModel({
+  const saveImage = imageModel({
     name: req.body.name,
-    price:req.body.price,
+    price: req.body.price,
     img: {
-      data: fs.readFileSync("uploads/" + req.file.filename),
+      data: req.file.buffer,
       contentType: "image/png",
     },
   });
@@ -59,7 +59,7 @@ app.post("/upload", upload.single("Image"), (req, res) => {
     .catch((err) => {
       console.log(err, "error has occur");
     });
-    res.send('image is saved')
+  res.send("image is saved");
 });
 
 app.get('/retrieve',async (req,res)=>{
