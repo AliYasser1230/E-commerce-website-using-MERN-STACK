@@ -3,7 +3,8 @@ const userModel = require("../models/model");
 const imageModel = require("../models/imagemodel");
 const User = require("../models/model");
 const app = express();
-
+const cors = require('cors')
+app.use(cors());
 app.use(express.urlencoded({extended:true}))
 
 app.post("/register",async(req,res)=>{
@@ -15,22 +16,27 @@ app.post("/register",async(req,res)=>{
       res.status(500).send(error);
     }
 })
-app.get("/register",async(req,res)=>{
-  try{
-  const check=await User.findOne(req.body)
-  if(check)
-  {
-    res.json("exist")
+
+app.get("/checkusers",async(req,res)=>{
+  try {
+    const check=await userModel.findOne({email:email})
+    if(check)
+    {
+     res.json("exist")
+    }
+    else 
+    {
+    res.json("not exist")
+    }
   }
-  else
+   catch (error) 
   {
-    res.send(check);
-    res.json("not exist")
-}
-  }catch(err){
-    res.json("not exist")
+    console.log(error.res.data)
   }
 })
+
+
+
 
 app.get("/add_user", async (request, response) => {
     const user = new userModel(request.body);
@@ -42,7 +48,7 @@ app.get("/add_user", async (request, response) => {
     }
 });
 
-app.get("/users", async (request, response) => {
+app.get("/btngan", async (request, response) => {
     const users = await userModel.find({});
     
     try {
