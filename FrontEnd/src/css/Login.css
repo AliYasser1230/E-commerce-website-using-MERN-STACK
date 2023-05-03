@@ -99,3 +99,8 @@ button:hover{
 .change-form-container{
     margin-top: 12px;
 }
+.msg{
+    color:red;
+    font-weight: 550;
+    font-size: 20px;
+}

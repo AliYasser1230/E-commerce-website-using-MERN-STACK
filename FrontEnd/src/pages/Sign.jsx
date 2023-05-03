@@ -6,57 +6,55 @@ const Sign = () => {
   const [form, setForm] = useState(false);
   const[email,setemail]=useState('')
   const[password,setpassword]=useState('')
+  const[name, setName] = useState('');
+  const[msg, setMsg] = useState('');
   const history=useNavigate();
-  async function submit(e){
-    e.preventDefault();
+  const submit = async(e)=>{
+  e.preventDefault();
    try {
-
-    await axios.post("http://localhost:5050/register",{ email:email, password:password})
+    await axios.post("http://localhost:5050/register",{ email:email, password:password, name:name})
     .then(res=>{
       if(res.email="exist"){
-     history("/",{state:{id:email}})
+        history("/",{state:{id:name}})
       }
       else if(res.email="not exist")
       {
        alert("User is not logged in ")
       }
-    })
-    
-  
-   
+    })   
   }
   catch (error) 
   {
     console.log(error.response.data)
   }
-
   
-  }
+}
  
-  async function checklogin(e){
+  const checklogin = async (e)=>{
     e.preventDefault();
     try {
-
-      await axios.get("http://localhost:5050/checkusers",{ email:email, password:password})
+      await axios.post("http://localhost:5050/checkusers",{ email:email, password:password, name:name})
       .then(res=>{
-        console.log(res.data)
-        if(res.data=="not exist"){
-       alert("User does not exist")      
-      }
-        else
+        if(res.data == "no")
         {
-         alert("User exists ")
+          setMsg("User doesn't exist");
+        }
+        else{
+          if(res.data.password != password)
+          {
+            setMsg("Incorrect Password");
+          }
+          else
+          {
+            history("/",{state:{id:email}})
+          }
         }
       })
-      
-    
-     
     }
     catch (error) 
     {
       console.log(error.response.data)
     }
-  
   }
   
   const handleClick = ()=>{
@@ -75,12 +73,13 @@ const Sign = () => {
        <h2>Login</h2>
        <form action='GET'  >
        <div className='form-item-container'>
-          <input className='inputss ' type="text" placeholder='User Name'onChange={(e)=>{setemail(e.target.value)}} />
+          <input className='inputss ' type="text" placeholder='Email'onChange={(e)=>{setemail(e.target.value)}} />
         </div>
         <div className='form-item-container'>
-          <input className='inputss' type="text" placeholder='Password'onChange={(e)=>{setpassword(e.target.value)}}/>
+          <input className='inputss' type="password" placeholder='Password'onChange={(e)=>{setpassword(e.target.value)}}/>
         </div>
        <div className='form-item-container'>
+        <p className='msg'>{msg}</p>
         <button  className='button-signin' onClick={checklogin}> Login</button>
         </div>
       </form>
@@ -103,11 +102,15 @@ const Sign = () => {
        <form action='POST' >
 
        <div className='form-item-container'>
-          <input className='inputss' type="text" placeholder='User Name'onChange={(e)=>{setemail(e.target.value)}}  />
+          <input className='inputss' type="text" placeholder='Email'onChange={(e)=>{setemail(e.target.value)}}  />
         </div>
         <div  className='form-item-container'>
-          <input className='inputss' type="text" placeholder='Password' onChange={(e)=>{setpassword(e.target.value)}}/>
+          <input className='inputss' type="text" placeholder='Name' onChange={(e)=>{setName(e.target.value)}}/>
         </div>
+        <div  className='form-item-container'>
+          <input className='inputss' type="password" placeholder='Password' onChange={(e)=>{setpassword(e.target.value)}}/>
+        </div>
+        
         <div className='form-item-container'>
         <button className='button-signin' onClick={submit}>Create Account!</button>
         </div>

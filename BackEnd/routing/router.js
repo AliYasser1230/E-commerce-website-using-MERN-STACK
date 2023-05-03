@@ -17,38 +17,26 @@ app.post("/register",async(req,res)=>{
     }
 })
 
-app.get("/checkusers",async(req,res)=>{
+app.post("/checkusers",async(req,res)=>{
+  let data = req.body;
   try {
-    const check=await userModel.findOne({email:email})
-    if(check)
+    const check = await userModel.findOne({email:data.email});
+    if(check == null)
     {
-     res.json("exist")
+      res.json("no");
     }
-    else 
-    {
-    res.json("not exist")
+    else{
+      res.json(check);
     }
   }
    catch (error) 
   {
-    console.log(error.res.data)
+    console.log(error)
   }
 })
 
 
-
-
-app.get("/add_user", async (request, response) => {
-    const user = new userModel(request.body);
-    try {
-      await user.save();
-      response.send(user);
-    } catch (error) {
-      response.status(500).send(error);
-    }
-});
-
-app.get("/btngan", async (request, response) => {
+app.get("/getallusers", async (request, response) => {
     const users = await userModel.find({});
     
     try {
