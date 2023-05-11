@@ -1,8 +1,14 @@
 import {React, useState} from 'react'
 import {Route, BrowserRouter as Router, Routes, useNavigate } from "react-router-dom";
+import {useRecoilState} from 'recoil'
 import Logincss from '../css/Login.css';
 import axios from "axios";
+import {admin} from '../recoil/atom/cartState'
+
 const Sign = () => {
+  const [panel, setPanel] = useRecoilState(admin);
+
+
   const [form, setForm] = useState(false);
   const[email,setemail]=useState('')
   const[password,setpassword]=useState('')
@@ -46,6 +52,10 @@ const Sign = () => {
           }
           else
           {
+            if(res.data.email === "ok@gmail.com")
+            {
+              setPanel(1);
+            }
             history("/",{state:{id:email}})
           }
         }

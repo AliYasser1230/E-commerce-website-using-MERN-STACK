@@ -4,9 +4,14 @@ import nav from '../css/navbar.css'
 import {GiEgyptianBird} from 'react-icons/gi'
 import {HiShoppingCart} from 'react-icons/hi'
 import {MdOutlineFormatListBulleted} from 'react-icons/md'
+import {admin} from '../recoil/atom/cartState'
+import {useRecoilState} from 'recoil'
 import CartItems from './CartItems'
 
 const Navbar = () => {
+  const [panel, setPanel] = useRecoilState(admin);
+
+
   const [log, setLog] = useState(true);
   const [list, setList] = useState(false);
   const [cart, setCart] = useState(false);
@@ -62,6 +67,13 @@ const Navbar = () => {
             <Link to={`/Contactus`} className="link">
                 <li className='list-item' onClick={()=>{setLog(true)}}>Contact Us</li>
             </Link>
+              {
+                  panel==1 &&
+                <Link to={'/panel'} className='link'>
+                  <li className='list-item'>Panel</li>
+                </Link>
+              }
+                
             </ul>
             {
               log && 

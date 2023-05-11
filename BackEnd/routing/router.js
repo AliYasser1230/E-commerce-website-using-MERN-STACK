@@ -7,6 +7,8 @@ const cors = require('cors')
 app.use(cors());
 app.use(express.urlencoded({extended:true}))
 
+
+
 app.post("/register",async(req,res)=>{
   const user = new userModel(req.body);
     try {
@@ -47,16 +49,34 @@ app.get("/getallusers", async (request, response) => {
       response.status(500).send(error);
     }
   });
-  
-  app.post("/users", async (req,res)=>{
-    const users=new userModel(req.body);
-    users.save()
-    .then((result)=>{
-   
-    }).catch((err)=>{
- console.log(err);
-    })
-  })
+
+
+app.post('/updatemail', async(req,res)=>{
+  let data = req.body;
+  console.log(data)
+  try {
+    const check = await userModel.findOne({email:data.oldEmail});
+    
+    if(check == null)
+    {
+      res.json("no");
+    }
+    else{
+      const filter = {email : data.oldEmail};
+      let newValues = {
+        $set: {
+        email:data.newEmail
+      },
+      };
+      const result = await userModel.updateOne(check, newValues, {upsert:true})
+      console.log("successful")
+    }
+  }
+  catch(error)
+  {
+    console.log(error);
+  }
+})
 
 app.post("/add_item", async(req,res)=>{
   const image = new imageModel(req.body);

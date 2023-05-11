@@ -7,6 +7,7 @@ import Body from './components/Body'
 import ImageSlider from './components/ImageSlider'
 import Contactus from './pages/Contactus';
 import Shop from './pages/Shop';
+import Panel from './components/Panel';
 
 function App() {
  
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Sign/>} />
         <Route path="/Contactus" element={<Contactus/>}/>
         <Route path="/shop" element={<Shop/>}/>
+        <Route path="/panel" element={<Panel/>}/>
       </Routes> 
     </div>
     </Router>
