@@ -14,3 +14,8 @@ export const admin = atom({
   key:"admin",
   default: 0,
 });
+
+export const loggedin = atom({
+  key:"loggedin",
+  default: false,
+})

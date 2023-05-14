@@ -78,6 +78,26 @@ app.post('/updatemail', async(req,res)=>{
   }
 })
 
+app.post('/deleteuser', async(req,res)=>{
+  let data = req.body;
+  try{
+    const check = await userModel.find({email:data.email});
+    if(check)
+    {
+      const result = await userModel.deleteOne({email:data.email})
+      console.log("worked")
+    }
+    else{
+      console.log("No user with this email")
+    }
+  }
+  catch(error)
+  {
+    console.log(error);
+  }
+
+})
+
 app.post("/add_item", async(req,res)=>{
   const image = new imageModel(req.body);
   try{
@@ -87,6 +107,7 @@ app.post("/add_item", async(req,res)=>{
     res.status(500).send(e);
   }
 });
+
 
 app.get("/shop", async (req,res)=>{
   const imageData = await imageModel.find({});

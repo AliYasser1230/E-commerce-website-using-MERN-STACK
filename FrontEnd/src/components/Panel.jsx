@@ -9,6 +9,8 @@ const Panel = () => {
     const [email, setEmail] = useState('')
     const [oldEmail, setOldEmail] = useState('')
     const [newEmail, setNewEmail] = useState('')
+    const [name, setName] = useState('')
+    const [pass, setPass] = useState('')
 
     const [info, setInfo] = useState([])
 
@@ -23,6 +25,7 @@ const Panel = () => {
         {
             console.log(error)
         }
+        console.log(users)
     }
     const getUser = ()=>{
         users.map((user)=>{
@@ -51,14 +54,45 @@ const Panel = () => {
             console.log(error);
         }
     }
+    const deleteUser = async (e)=>{
+        e.preventDefault();
+        try{
+            await axios.post("http://localhost:5050/deleteuser",{email: email})
+        }
+        catch(error)
+        {
+            console.log(error);
+        }
+    }
     
   return (
     <div>  
+        <div>
+        <div className='getuser'><button onClick={getUsers} className='getuser-button getuser'>Get Users</button></div>
+        <table className='flex-1'>
+            <tr className='flex-2'>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+            {
+                users.map((user)=>{
+                    return(
+                    <tr className='flex-3'>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                        <td>{user.password}</td>
+                    </tr>
+                    )
+                    
+                })
+            }
+        </table>
+        </div>
         <div className='form1'>
             <h3>Get User By Email</h3>
             <input type="text" className='form1-data'onChange={e=>setEmail(e.target.value)}/>
             <button onClick={getUser}  className='finduser-button'>Find user</button>
-            <button onClick={getUsers} className='getuser-button'>Get Users</button>
         </div>
         {
             
@@ -73,6 +107,11 @@ const Panel = () => {
             <label>Old Email: <input type="text" className='form1-data' onChange={e=>setOldEmail(e.target.value)}/></label>
             <label>New Email: <input type="text" className='form1-data' onChange={e=>setNewEmail(e.target.value)}/></label>
             <button onClick={changeEmail} className='change-button'>Change!</button>
+        </div>
+        <div className='form1'>
+            <h3>Delete User</h3>
+            <label>Email: <input type="text" className='form1-data' onChange={e=>setEmail(e.target.value)}/></label>
+            <button onClick={deleteUser}>Delete!</button>
         </div>
        
     </div>

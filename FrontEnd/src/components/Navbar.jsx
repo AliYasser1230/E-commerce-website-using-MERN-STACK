@@ -7,10 +7,11 @@ import {MdOutlineFormatListBulleted} from 'react-icons/md'
 import {admin} from '../recoil/atom/cartState'
 import {useRecoilState} from 'recoil'
 import CartItems from './CartItems'
+import {loggedin} from '../recoil/atom/cartState'
 
 const Navbar = () => {
   const [panel, setPanel] = useRecoilState(admin);
-
+  const [logged, setLogged] = useRecoilState(loggedin);
 
   const [log, setLog] = useState(true);
   const [list, setList] = useState(false);
@@ -43,13 +44,20 @@ const Navbar = () => {
         <div>
         
            {
-            log && 
-            <div onClick={()=>{setLog(false)}} className='login-container-2'>
+            logged != false && 
+            <div className='login-container-2'>
               <Link to={`/login`} >
                 <button className='home-login'>LOGIN</button>
               </Link>
             </div>
            }
+           {
+              logged == false &&
+              <div onClick={()=>{setLogged(true);setPanel(0)}} className='login-container-2'>
+                <button className='home-login'>SignOut</button>
+              </div>
+            }
+
           
         
           <HiShoppingCart className='cart' onClick={handleCart}/>
@@ -76,11 +84,17 @@ const Navbar = () => {
                 
             </ul>
             {
-              log && 
-              <div onClick={()=>{setLog(false)}} className='login-container'>
+              logged != false &&
+              <div className='login-container'>
                 <Link to={`/login`}>
                   <button className='home-login'>LOGIN</button>
                 </Link>
+              </div>
+            }
+            {
+              logged == false &&
+              <div onClick={()=>{setLogged(true);setPanel(false)}} className='login-container'>
+                <button className='home-login'>SignOut</button>
               </div>
             }
                 
@@ -93,15 +107,23 @@ const Navbar = () => {
           cart &&  
           <CartItems/>
         }
-{
+        {
             list &&
             <div className='list-att'>
               <ul className='list-list'>
                 <li className='close-list' onClick={handleList}>x</li>
                 <Link to='/' className="link"><li className='list-list-item'>Home</li></Link>
-                <Link to='/' className="link"><li className='list-list-item'>About</li> </Link>
+                <Link className="link"><li className='list-list-item'>About</li> </Link>
                 <Link to='/shop' className="link"><li className='list-list-item'>Shop</li> </Link>
                 <Link to='/Contactus' className='link'><li className='list-list-item'>Contact us</li></Link>
+                {
+                  panel==1 &&
+                <Link to={'/panel'} className='link'>
+                  <li className='list-list-item'>Panel</li>
+                </Link>
+              }
+            
+              
               </ul>
             </div>
           }

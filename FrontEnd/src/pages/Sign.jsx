@@ -4,10 +4,11 @@ import {useRecoilState} from 'recoil'
 import Logincss from '../css/Login.css';
 import axios from "axios";
 import {admin} from '../recoil/atom/cartState'
+import {loggedin} from "../recoil/atom/cartState"
 
 const Sign = () => {
   const [panel, setPanel] = useRecoilState(admin);
-
+  const[logged, setLogged] = useRecoilState(loggedin);
 
   const [form, setForm] = useState(false);
   const[email,setemail]=useState('')
@@ -21,7 +22,9 @@ const Sign = () => {
     await axios.post("http://localhost:5050/register",{ email:email, password:password, name:name})
     .then(res=>{
       if(res.email="exist"){
+        setLogged(false);
         history("/",{state:{id:name}})
+
       }
       else if(res.email="not exist")
       {
@@ -56,6 +59,7 @@ const Sign = () => {
             {
               setPanel(1);
             }
+            setLogged(false);
             history("/",{state:{id:email}})
           }
         }

@@ -111,7 +111,7 @@
     width: 50px;
     position: absolute;
     right: 3px;
-    
+    margin-right: 0.5rem;
   
 }
 .login-container-2{
@@ -132,13 +132,6 @@
  
     
 }
-@media only screen and (min-width: 690px)
-{
-    .login-container-2{
-        display: none;
-    }
-}
-
 .list-att{
     display: flex;
     justify-content: center;
@@ -147,6 +140,17 @@
     background-color: #ede3dace;
     width: 15rem;
 }
+@media only screen and (min-width: 690px)
+{
+    .login-container-2{
+        display: none;
+    }
+    .list-att{
+        display:none;
+    }
+}
+
+
 .list-list{
     display:flex;
     flex-direction: column;
