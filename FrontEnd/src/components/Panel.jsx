@@ -56,8 +56,9 @@ const Panel = () => {
     <div>  
         <div className='form1'>
             <h3>Get User By Email</h3>
-            <input type="text" onChange={e=>setEmail(e.target.value)}/>
-            <button onClick={getUser}>Find user</button>
+            <input type="text" className='form1-data'onChange={e=>setEmail(e.target.value)}/>
+            <button onClick={getUser}  className='finduser-button'>Find user</button>
+            <button onClick={getUsers} className='getuser-button'>Get Users</button>
         </div>
         {
             
@@ -69,13 +70,11 @@ const Panel = () => {
         }
         <div className='form1'>
             <h3>Change user Email</h3>
-            <label>Old Email: <input type="text" onChange={e=>setOldEmail(e.target.value)}/></label>
-            <label>New Email: <input type="text" onChange={e=>setNewEmail(e.target.value)}/></label>
-            <button onClick={changeEmail}>Change!</button>
+            <label>Old Email: <input type="text" className='form1-data' onChange={e=>setOldEmail(e.target.value)}/></label>
+            <label>New Email: <input type="text" className='form1-data' onChange={e=>setNewEmail(e.target.value)}/></label>
+            <button onClick={changeEmail} className='change-button'>Change!</button>
         </div>
-        <div>
-            <button onClick={getUsers}>Get Users</button>
-        </div>
+       
     </div>
   )
 }
