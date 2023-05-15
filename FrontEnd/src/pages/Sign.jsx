@@ -81,7 +81,7 @@ const Sign = () => {
       !form && 
       <div>
         <div className='Body-Form' >
-    <img className='imgg' src="/images/clo.png"/>
+    <img className='imgg' src="https://media1.tenor.com/images/346e7d242bd6f40ec7f28bd2516a9a8c/tenor.gif?itemid=15515026"/>
     <div className='Main-Form' >
      
        <h2>Login</h2>

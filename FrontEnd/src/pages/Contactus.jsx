@@ -4,7 +4,7 @@ const Contactus = () => {
     return (
         
         <div>
-            <img className='img-contact' src="/images/w.jpg" alt="" />
+            <img className='img-contact' src="https://media1.tenor.com/images/3b97033a48fd58a90fbf9258b037594f/tenor.gif?itemid=18019266"/>
            
             <div className='Main-ContactUs'>
             
