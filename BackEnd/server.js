@@ -67,17 +67,14 @@ app.get('/retrieve',async (req,res)=>{
   res.json(allData)
 })
 
-app.get('/delete/:id', async (req,res)=>{
-  let {id} = req.params;
+app.post('/delete', async (req,res)=>{
+  let data = req.body;
+  console.log(data.name);
   try{
-    const exist = await imageModel.findById(id);
-    console.log(exist);
-    if(exist){
-      const data = await imageModel.findByIdAndRemove(id);
-      res.send(id + " Has been removed");
-    }
-    else{
-      res.send('Document doesnt exist');
+    const check = await imageModel.deleteOne({name:data.name});
+    if(check)
+    {
+      res.json("worked")
     }
   }
   catch(err){

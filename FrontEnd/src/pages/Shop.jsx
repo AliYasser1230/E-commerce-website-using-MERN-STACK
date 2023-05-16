@@ -52,7 +52,7 @@ const Shop = () => {
             return(
                 <div className='one-item' key={info._id}>
                     <div>
-                        <img onClick={()=>{console.log(cart)}} src={`data:image/png;base64,${base64String}`} height="150" width="200"/>
+                        <img className='img2' onClick={()=>{console.log(cart)}} src={`data:image/png;base64,${base64String}`} height="150" width="200"/>
                     </div>
                     <p className='donut-name'>{info.name}</p>
                     <p className='price'>${info.price}</p>

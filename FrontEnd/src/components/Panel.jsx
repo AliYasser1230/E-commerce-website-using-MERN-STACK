@@ -11,9 +11,10 @@ const Panel = () => {
     const [newEmail, setNewEmail] = useState('')
     const [name, setName] = useState('')
     const [pass, setPass] = useState('')
-    const [price, setPrice] = useState();
-    const [image, setImage] = useState();
-    const [msg, setMsg] = useState('');
+    const [price, setPrice] = useState()
+    const [image, setImage] = useState()
+    const [msg, setMsg] = useState('')
+    const [msg2,setMsg2] = useState('')
 
     const [info, setInfo] = useState([])
 
@@ -86,10 +87,20 @@ const Panel = () => {
             console.log(error);
         }
     }
-    const addItem = async (e)=>{
+    const deleteItem = async (e)=>{
         e.preventDefault();
         try{
-            await axios.post("http://localhost:5050/upload",{Image: image, name:name, price:price})
+            await axios.post("http://localhost:5050/delete",{name: name})
+            .then(res=>{
+                if(res.data == "worked")
+                {
+                    
+                    setMsg2("Item Deleted")
+                }
+                else{
+                    setMsg2("Error has occured")
+                }
+            })
         }
         catch(error)
         {
@@ -160,6 +171,12 @@ const Panel = () => {
             <label>Image: <input type="file" className='form1-data' name="Image"/></label>
             <button className='change-button'>Add To Shop</button>
         </form>
+        <div className='form1'>
+            <h3>Delete Item From Shop</h3>
+            <label>Name: <input type="text" className='form1-data' onChange={(e)=>{setName(e.target.value)}}/></label>
+            <p>{msg2}</p>
+            <button onClick={deleteItem} className='change-button'>Delete!</button>
+        </div>
        
     </div>
   )
