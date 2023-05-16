@@ -11,6 +11,9 @@ const Panel = () => {
     const [newEmail, setNewEmail] = useState('')
     const [name, setName] = useState('')
     const [pass, setPass] = useState('')
+    const [price, setPrice] = useState();
+    const [image, setImage] = useState();
+    const [msg, setMsg] = useState('');
 
     const [info, setInfo] = useState([])
 
@@ -58,6 +61,35 @@ const Panel = () => {
         e.preventDefault();
         try{
             await axios.post("http://localhost:5050/deleteuser",{email: email})
+            .then(res=>{
+                console.log(res);
+                 if(res.data=="yes")
+                 {setMsg("Worked!!")}
+                 if(res.data == "no")
+                 {
+                    setMsg("No user with this Email")
+                 }
+                })
+        }
+        catch(error)
+        {
+            console.log(error);
+        }
+    }
+    const createUser = async (e)=>{
+        e.preventDefault();
+        try{
+            await axios.post("http://localhost:5050/register",{ email:email, password:pass, name:name, admin:true})
+        }
+        catch(error)
+        {
+            console.log(error);
+        }
+    }
+    const addItem = async (e)=>{
+        e.preventDefault();
+        try{
+            await axios.post("http://localhost:5050/upload",{Image: image, name:name, price:price})
         }
         catch(error)
         {
@@ -111,8 +143,23 @@ const Panel = () => {
         <div className='form1'>
             <h3>Delete User</h3>
             <label>Email: <input type="text" className='form1-data' onChange={e=>setEmail(e.target.value)}/></label>
-            <button onClick={deleteUser}>Delete!</button>
+            {msg && <p>{msg}</p>}
+            <button onClick={deleteUser} className='change-button'>Delete!</button>
         </div>
+        <div className='form1'>
+            <h3>Create Admin User</h3>
+            <label>Email: <input type="text" className='form1-data' onChange={e=>setEmail(e.target.value)}/></label>
+            <label>Name: <input type="text" className='form1-data' onChange={e=>setName(e.target.value)}/></label>
+            <label>Password: <input type="text" className='form1-data' onChange={e=>setPass(e.target.value)}/></label>
+            <button onClick={createUser} className='change-button'>Create</button>
+        </div>
+        <form method="post" action="http://localhost:5050/upload" enctype="multipart/form-data" className='form1'>
+            <h3>Add Item To Shop</h3>
+            <label>Name: <input type="text" className='form1-data' name="name"/></label>
+            <label>Price: <input type="number" className='form1-data' name="price"/></label>
+            <label>Image: <input type="file" className='form1-data' name="Image"/></label>
+            <button className='change-button'>Add To Shop</button>
+        </form>
        
     </div>
   )

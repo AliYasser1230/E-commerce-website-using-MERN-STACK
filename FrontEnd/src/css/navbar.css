@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 90px;
-    background-color: #EDE3DA;
+    background-color: #EFEFEF;
     color: #3C3A36;
 }
 .list{
@@ -21,7 +21,7 @@
     justify-content: center;
 }
 .home{
-    background-color: #E2CEBC;
+    background-color: #EFEFEF;
 }
 .name{
     font-size: 30px;
@@ -137,7 +137,7 @@
     justify-content: center;
     align-items: center; 
     position: absolute;
-    background-color: #ede3dace;
+    background-color: #EFEFEF;
     width: 15rem;
 }
 @media only screen and (min-width: 690px)

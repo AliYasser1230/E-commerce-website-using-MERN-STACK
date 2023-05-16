@@ -55,7 +55,7 @@ const Sign = () => {
           }
           else
           {
-            if(res.data.email === "ok@gmail.com")
+            if(res.data.admin === "true")
             {
               setPanel(1);
             }

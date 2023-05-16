@@ -17,5 +17,5 @@ export const admin = atom({
 
 export const loggedin = atom({
   key:"loggedin",
-  default: false,
+  default: true,
 })

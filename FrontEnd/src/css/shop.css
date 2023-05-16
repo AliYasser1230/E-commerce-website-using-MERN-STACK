@@ -24,7 +24,7 @@
 }
 
 .price{
-    color: rgba(0, 0, 0, 0.666);
+    color: #1A1A1A;
     font-size: 18px;
     font-weight: 600;
 }
@@ -34,14 +34,14 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     border-radius: 30px;
-    background-color: rgba(241, 218, 222, 0.77);
+    background-color: #EFEFEF;
     cursor: pointer;
 }
 .add-button:hover{
-    background-color: rgb(226, 202, 202);
+    background-color: #efefefc2;
 }
 .donut-name{
     font-size: 20px;
-    color: rgba(229, 131, 147, 0.627);
+    color: white;
     font-weight: 600;
 }

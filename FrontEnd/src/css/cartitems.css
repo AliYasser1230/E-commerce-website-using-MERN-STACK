@@ -2,15 +2,15 @@
     right: 0;
     margin-top: -10px;
     min-height: 50px;
-    max-width: 300px;
-    background-color: red;
+    max-width: 350px;
     position: absolute;
     display:flex;
     flex-direction: column;
-    background-color: #EDE3DA;
-    padding-right: 1rem;
-    padding-left: 0.25rem;
-
+    background-color: #1a1a1a;
+    padding-right: 1.5rem;
+    padding-left: 1rem;
+    color: rgb(133, 130, 130);
+    border-radius: 20px;
 }
 .cartitem{
     margin-top: 20px;
@@ -68,14 +68,16 @@
 .shop-btn{
     padding-right: 1.5rem;
     padding-left: 1.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border-radius: 30px;
-    background-color: rgba(241, 218, 222, 0.77);
+    background-color: #4b4a4a;
+    border: #4b4a4a 1px solid;
     cursor: pointer;
     display:flex;
     justify-content: center;
-
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
 }
 .btn-container{
     margin-top: 5px;

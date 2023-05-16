@@ -82,13 +82,14 @@ app.post('/deleteuser', async(req,res)=>{
   let data = req.body;
   try{
     const check = await userModel.find({email:data.email});
-    if(check)
+    console.log(check)
+    if(check.length > 0)
     {
       const result = await userModel.deleteOne({email:data.email})
-      console.log("worked")
+      res.json("yes")
     }
     else{
-      console.log("No user with this email")
+      res.json("no")
     }
   }
   catch(error)
