@@ -1,24 +1,27 @@
 export const SliderData = [
     {
       image:
-        'https://media.istockphoto.com/id/1349424393/photo/donut-for-breakfast-on-wood-board.jpg?s=612x612&w=0&k=20&c=mwJ7CcWIU1ZB2bfDSd7qSHj071eEY9-_nEyz6_Su6uA='
+        "/images/fashion.png"
     },
     {
       image:
-        'https://media.istockphoto.com/id/956859072/photo/baker-pastry-chef.jpg?s=612x612&w=0&k=20&c=ruJg4D2lh9tUhuYFfYgSyWF7GWZAIHMktPSwAbvbl9s='
+      "/images/fashion2.png"
     },
     {
       image:
-        'https://media.istockphoto.com/id/535991757/photo/waffles.jpg?s=612x612&w=0&k=20&c=WjJFUCwlcyyib4Y2sYJJYrGcWi_-2IVcN6GLRpcmh0A='
+      "/images/fashion3.png"
     },
     {
       image:
-        'https://media.istockphoto.com/id/888069514/photo/belgian-waffles-with-berries-and-fruits.jpg?s=612x612&w=0&k=20&c=oXPYhwGZPY-XEqwGVjmdJZR6lW8V-0sOOGc43vyt6oA='
+      "/images/fashion4.jpg"
     },
     {
-     image:'https://media.istockphoto.com/id/623109122/photo/various-baked-donuts.jpg?s=612x612&w=0&k=20&c=9aXn3kpFTzR_Kllm_LcBANKhRGTx37_7Pd7pgQC9Sfk='
+      image:
+      "/images/fashion5.jpg"
     },
+
     {
-      image:'https://media.istockphoto.com/id/529351735/photo/turkish-ramadan-sweet-sekerpare-with-wooden-background.jpg?s=612x612&w=0&k=20&c=FbTUX5fChTl7M7aKQI4WTwJ5e-VUqPghIuWIIu3SE3I='
+      image:"/images/fashion6.jpg"
+
     }
   ];

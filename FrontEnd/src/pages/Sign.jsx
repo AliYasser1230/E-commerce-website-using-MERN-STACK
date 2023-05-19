@@ -109,7 +109,7 @@ const Sign = () => {
       form && 
       <div>
         <div className='Body-Form' >
-    <img className='imgg' src="https://media.istockphoto.com/id/529351735/photo/turkish-ramadan-sweet-sekerpare-with-wooden-background.jpg?s=612x612&w=0&k=20&c=FbTUX5fChTl7M7aKQI4WTwJ5e-VUqPghIuWIIu3SE3I=" alt="" />
+    <img className='imgg' src="https://media1.tenor.com/images/346e7d242bd6f40ec7f28bd2516a9a8c/tenor.gif?itemid=15515026" />
       <div className='Main-Form'>
       
        <h2>Sign up!</h2>
