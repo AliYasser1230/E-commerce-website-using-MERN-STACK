@@ -116,7 +116,7 @@ const Sign = () => {
        <form action='POST' >
 
        <div className='form-item-container'>
-          <input className='inputss' type="text" placeholder='Email'onChange={(e)=>{setemail(e.target.value)}}  />
+          <input className='inputss' type="email" placeholder='Email'onChange={(e)=>{setemail(e.target.value)}}  />
         </div>
         <div  className='form-item-container'>
           <input className='inputss' type="text" placeholder='Name' onChange={(e)=>{setName(e.target.value)}}/>

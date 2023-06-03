@@ -31,10 +31,12 @@
 }
 .slide.active {
   opacity: 1;
-  transition-duration: 0.09s;
   transform: scale(0.998);
+  transition-duration: 1.5s;
   z-index: -1000;
   background-color: rgba(0, 0, 0, 0.577);
+  padding: 2rem;
+  margin-top: -13px;
 }
 .arrange{
   display:flex;
