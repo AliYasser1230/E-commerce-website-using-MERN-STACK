@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap');
+
 body{
   background-color: #c0bcb9;
   
@@ -21,4 +23,73 @@ body{
 
 .body-image{
   width: 100%;
+}
+
+.shop-now-layout{
+  margin-top: 20px;
+  display:flex;
+  flex-direction: row;
+  gap: 10%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 30px;
+}
+.gif-layout{
+  position: absolute;
+  border-radius: 50px;
+}
+
+
+.shop-now-right{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+}
+.shop-now-left{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+}
+.shop-now-1, .shop-now-2, .shop-now-3{
+  background-color: rgba(48, 46, 46, 0.7);
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  border-radius: 23px;
+}
+.shop-now-2{
+  margin-bottom: -50px;
+}
+.shop-img{
+  width: 250px;
+  height: 250px;
+}
+.shop-now-layout p{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Shantell Sans', cursive;
+  color: rgb(255, 253, 253);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+@media only screen and (max-width: 800px) {
+  .shop-now-layout{
+    display:flex;
+    background-color: #1b1a1800;
+    flex-direction: column;
+  }
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 23%;
 }

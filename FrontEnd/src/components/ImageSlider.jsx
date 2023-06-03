@@ -21,9 +21,13 @@ const ImageSlider = ({ slides }) => {
   }
 
   return (
+    <div className='slider-layout'>
     <section className='slider'>
-      <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
-      <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
+    <div className='arrange'>
+      <div className='indexed'>
+        <FaArrowAltCircleLeft  onClick={prevSlide} className='arrow'/>
+      </div>
+      <div>
       {SliderData.map((slide, index) => {
         return (
           <div
@@ -36,7 +40,13 @@ const ImageSlider = ({ slides }) => {
           </div>
         );
       })}
+      </div>
+      <div className='indexed'>
+        <FaArrowAltCircleRight  onClick={nextSlide} className='arrow'/>
+      </div>
+    </div>
     </section>
+    </div>
   );
 };
 
