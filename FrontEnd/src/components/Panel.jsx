@@ -2,8 +2,12 @@ import React from 'react'
 import {useState} from 'react'
 import axios from "axios";
 import panel from '../css/panel.css'
+import {admin} from '../recoil/atom/cartState'
+import {useRecoilState} from 'recoil'
+
 
 const Panel = () => {
+    const[logged, setLogged] = useRecoilState(admin);
 
     const [users,setUsers] = useState([])
     const [email, setEmail] = useState('')
@@ -109,7 +113,8 @@ const Panel = () => {
     }
     
   return (
-    <div>  
+    <div>  {logged && 
+        <div>
         <div>
         <div className='getuser'><button onClick={getUsers} className='getuser-button getuser'>Get Users</button></div>
         <table className='flex-1'>
@@ -177,8 +182,8 @@ const Panel = () => {
             <p>{msg2}</p>
             <button onClick={deleteItem} className='change-button'>Delete!</button>
         </div>
-       
-    </div>
+    </div> }
+</div> 
   )
 }
 

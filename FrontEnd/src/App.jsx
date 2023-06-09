@@ -8,6 +8,7 @@ import ImageSlider from './components/ImageSlider'
 import Contactus from './pages/Contactus';
 import Shop from './pages/Shop';
 import Panel from './components/Panel';
+import Aboutus from './pages/Aboutus';
 
 function App() {
  
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Contactus" element={<Contactus/>}/>
         <Route path="/shop" element={<Shop/>}/>
         <Route path="/panel" element={<Panel/>}/>
+        <Route path="/Aboutus" element={<Aboutus/>}/>
       </Routes> 
     </div>
     </Router>

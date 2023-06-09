@@ -68,7 +68,9 @@ const Navbar = () => {
               <Link to={`/`} className="link">
                 <li className='home list-item' onClick={()=>{setLog(true)}}>Home</li>
               </Link>
+              <Link to={'/Aboutus'} className="link">
                 <li className='list-item'>About</li>
+                </Link>
                 <Link to={'/shop'} className='link'>
                 <li className='list-item'>Shop</li>
                 </Link>
@@ -113,7 +115,7 @@ const Navbar = () => {
               <ul className='list-list'>
                 <li className='close-list' onClick={handleList}>x</li>
                 <Link to='/' className="link"><li className='list-list-item'>Home</li></Link>
-                <Link className="link"><li className='list-list-item'>About</li> </Link>
+                <Link to="/Aboutus" className="link"><li className='list-list-item'>About</li> </Link>
                 <Link to='/shop' className="link"><li className='list-list-item'>Shop</li> </Link>
                 <Link to='/Contactus' className='link'><li className='list-list-item'>Contact us</li></Link>
                 {
